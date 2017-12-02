@@ -6,7 +6,63 @@
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="./css/main.css" />
 </head>
-<body>
+<body class="container">
+	<header>
+		<h1>CoffeeRun</h1>
+	</header>
+	<section>
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<form data-coffee-order="form">
+					<div class="form-group">
+						<label for="coffeeOrder">Coffee Order</label>
+						<input id="coffeeOrder" class="form-control" type="text" name="coffee" placeholder="input your coffee order" autofocus="true" />
+					</div>
+					<div class="form-group">
+						<label for="emailInput">Email</label>
+						<input id="emailInput" class="form-control" type="email" name="emailAddress" placeholder="input your email" />
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="size" value="short" />
+							Short
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="size" value="tall" checked="true" />
+							Tall
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="size" value="grande" />
+							Grande
+						</label>
+					</div>
+					<div class="form-group">
+						<label for="flavorShot">Flavor Shot</label>
+						<select id="flavorShot" class="form-control" name="flavor">
+							<option value="none">None</option>
+							<option value="caramel">Caramel</option>
+							<option value="almond">Almond</option>
+							<option value="mocha">Mocha</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="strengthLevel">Caffeine Rating</label>
+						<input id="strengthLevel" class="form-control" type="range" name="strength" value="30">
+					</div>
+					<button class="btn btn-default" type="submit">Submit</button>
+					<button class="btn btn-default" type="reset">Reset</button>
+				</form>
+			</div>
+		</div>
+	</section>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- 表单处理逻辑代码 -->
+<script type="text/javascript" src="./js/formhandler.js"></script>
 <!-- 管理增删改查模块代码	 -->
 <script type="text/javascript" src="./js/datastore.js"></script>
 <!-- 管理美食车模块创建、交付订单，打印订单列表代码，调用datastore.js中暴露的api -->
