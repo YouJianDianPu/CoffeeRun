@@ -7,6 +7,7 @@
 	var Truck = App.Truck;
 	var DataStore = App.DataStore;
 	var FormHandler = App.FormHandler;
+	var Validation = App.Validation;
 	var CheckList = App.CheckList;
 
 	// 实例化
@@ -18,9 +19,13 @@
 	checkList.addClickHnadler(myTruck.deliverOrder.bind(myTruck));
 
 	var formHandler = new FormHandler(FORM_SELECTOR);
+
 	formHandler.addSubmitHandler(function(data){
 		myTruck.createOrder.call(myTruck, data);
 		checkList.addRow.call(checkList, data);
 	});
+
+	formHandler.addInputHandler(Validation.isCompanyEmail);
+
 	console.log(formHandler);
 })(window)
